@@ -1,0 +1,52 @@
+html {
+   background: #e7e7e7 url(../resources/images/body-bg.png) 0 0 repeat;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0px 0;
+  font-weight: 700;
+  color:#222222;
+  /*font-family: 'Lucida Grande', 'Calibri', Helvetica, Arial, sans-serif;*/
+  letter-spacing: -1px;
+}
+
+h1 {
+  font-size: 48px;
+  padding: 0px 0px 0px 0px;
+  font-weight: 700;
+}
+
+h2 {
+  padding-bottom: 0px;
+  font-size: 36px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 21px;
+}
+
+h5 {
+  font-size: 18px;
+}
+
+h6 {
+  font-size: 16px;
+  color: #efefef;
+}
+
+p {
+  margin: 10px 0 15px 0;
+}
+
+.primaryTitle {
+   text-align: center;
+   font-size: 128px;
+}
+.secondaryTitle {
+   text-align: center;
+   font-size: 32px;
+}
