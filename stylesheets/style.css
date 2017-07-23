@@ -1,4 +1,4 @@
-html {
+html, body {
    background: #e7e7e7 url(../resources/images/body-bg.png) 0 0 repeat;
 }
 
@@ -41,6 +41,32 @@ h6 {
 p {
   margin: 10px 0 15px 0;
 }
+
+.mainHeader {
+  margin: 0px 0;
+  display: block;
+  letter-spacing: -1px;
+  text-align: center;
+  text-decoration: none;
+  font-family: 'Arial','sans-serif','Times New Roman';
+  font-size: 54pt;
+  font-weight: 200;
+  color: #ccc;
+  letter-spacing: -1px;
+
+}
+
+.subHeader {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 14pt;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 200;
+}
+
+.titleBackground {
+}
+
 
 .primaryTitle {
    text-align: center;

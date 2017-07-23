@@ -23,41 +23,13 @@
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-aria.min.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-messages.min.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
       <!-- Local Scripts -->
       <script src="javascripts/app.js"></script>
 
       <!-- Local Stylesheets-->
       <link rel="stylesheet" href="stylesheets/style.css">
    </head>
-
-   <script type="text/javascript">
-      angular.module('firstApplication', ['ngMaterial'])
-         .controller('pageController', pageController )
-         .config(['$mdThemingProvider', function($mdThemingProvider){
-            $mdThemingProvider.theme('pageTheme')
-               .primaryPalette('blue')
-               .accentPalette('cyan')
-               .warnPalette('red');
-            $mdThemingProvider.setDefaultTheme('pageTheme');
-         }]);
-
-      function pageController( $scope, $mdSidenav, $http){
-         $scope.loadLists = function(){
-            $http.get('docs/projects.json').then(
-               function(response){
-                  $scope.projectList = response.data.projects;
-               },
-               function(response){
-                  window.alert( "Something Went Wrong :(");
-               });
-         };
-
-         $scope.openLeftMenu = function(){
-            $mdSidenav('left').toggle();
-         };
-      }
-   </script>
-
    <body ng-app="firstApplication" ng-init="loadLists()" ng-controller="pageController" ng-cloak>
       <div id="sideNavContainer" layout="row">
          <md-sidenav md-component-id="left" class="md-sidenav-left">
@@ -106,10 +78,12 @@
                <md-icon md-svg-icon="resources/icons/menu.svg"></md-icon>
             </md-button>
 
-            <h1 class="primaryTitle">CPRC</h1>
-            <h2 style="secondaryTitle">Cal Poly Robotics Club</h2>
          </md-content>
 
+      </div>
+      <div class="titleBackground">
+            <h1 class="mainHeader">Cal Poly Robotics Club</h1>
+            <h2 style="secondaryTitle">"Learn with robots"</h2>
       </div>
    </body>
 </html>
