@@ -17,14 +17,6 @@ function pageController( $scope, $mdSidenav, $http){
    };
 }
 
-app.config(['$mdThemingProvider', function($mdThemingProvider){
-   $mdThemingProvider.theme('pageTheme')
-      .primaryPalette('blue')
-      .accentPalette('cyan')
-      .warnPalette('red');
-   $mdThemingProvider.setDefaultTheme('pageTheme');
-}]);
-
 // Route Configuration
 app.config(function($routeProvider) {
     $routeProvider

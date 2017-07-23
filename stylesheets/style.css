@@ -76,3 +76,32 @@ p {
    text-align: center;
    font-size: 32px;
 }
+
+#sideNavContainer, md-content{
+   background: #056571;
+}
+
+md-sidenav{
+  background: #1A1A1A;
+}
+
+md-list-item:nth-child(1){
+   border-top: 1px solid #404040 
+}
+
+md-list-item{
+   border-bottom: 1px solid #404040
+}
+
+.md-list-item-text h4{
+   color: white;
+}
+
+.selected:{
+   background: white;
+}
+
+#logo{
+   padding-top: 40px;
+   padding-bottom: 30px;
+}
