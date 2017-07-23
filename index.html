@@ -2,10 +2,6 @@
 <html lang="en">
    <head>
       <title>Cal Poly Robotics Club</title>
-      <!-- Libraries -->
-      <!-- Imported Fonts -->
-      <!-- Global Scripts -->
-      <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>-->
       <!-- Favicons -->
 		<link rel="apple-touch-icon" sizes="180x180" href="resources/favicon/apple-touch-icon.png">
       <link rel="icon" type="image/png" sizes="32x32" href="resources/favicon/favicon-32x32.png">
@@ -51,19 +47,19 @@
                   </div>
                </md-list-item>
 
-               <md-list-item class="md-1-line" ng-click="routeTo(somewhere)">
+               <md-list-item class="md-1-line" ng-click="routeTo(somewhere)" ng-href="#!store">
                   <div class="md-list-tem-text">
                      <h4>Club Store</h4>
                   </div>
                </md-list-item>
 
-               <md-list-item class="md-1-line" ng-click="routeTo(somewhere)">
+               <md-list-item class="md-1-line" ng-click="routeTo(somewhere)" ng-href="#!contact">
                   <div class="md-list-tem-text">
                      <h4>Contact Us</h4>
                   </div>
                </md-list-item>
 
-               <md-list-item class="md-1-line" ng-click="routeTo(somewhere)" >
+               <md-list-item class="md-1-line" ng-click="routeTo(somewhere)" ng-href="#!about">
                   <div class="md-list-tem-text">
                      <h4>About</h4>
                   </div>
@@ -81,9 +77,9 @@
          </md-content>
 
       </div>
-      <div class="titleBackground">
-            <h1 class="mainHeader">Cal Poly Robotics Club</h1>
-            <h2 style="secondaryTitle">"Learn with robots"</h2>
-      </div>
+
+      <!-- Applies individual htm pages-->
+      <div ng-view></div>
+
    </body>
 </html>
