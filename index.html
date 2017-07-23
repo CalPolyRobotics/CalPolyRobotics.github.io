@@ -5,16 +5,111 @@
       <!-- Libraries -->
       <!-- Imported Fonts -->
       <!-- Global Scripts -->
+      <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>-->
+      <!-- Favicons -->
+		<link rel="apple-touch-icon" sizes="180x180" href="resources/favicon/apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="resources/favicon/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="resources/favicon/favicon-16x16.png">
+      <link rel="manifest" href="resources/favicon/manifest.json">
+      <link rel="mask-icon" href="resources/favicon/safari-pinned-tab.svg" color="#5bbad5">
+      <meta name="theme-color" content="#ffffff">
+
+      <!-- Angular -->
+      <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-animate.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-aria.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-messages.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
       <!-- Local Scripts -->
-      <script src="./javascripts/app.js"></script>
+      <script src="javascripts/app.js"></script>
 
       <!-- Local Stylesheets-->
-      <link href="./stylesheets/style.css" rel="stylesheet">
+      <link rel="stylesheet" href="stylesheets/style.css">
    </head>
-   <body>
 
-      <h1 class="primaryTitle">CPRC</h1>
-      <h2 class="secondaryTitle">Cal Poly Robotics Club</h2>
+   <script type="text/javascript">
+      angular.module('firstApplication', ['ngMaterial'])
+         .controller('pageController', pageController )
+         .config(['$mdThemingProvider', function($mdThemingProvider){
+            $mdThemingProvider.theme('pageTheme')
+               .primaryPalette('blue')
+               .accentPalette('cyan')
+               .warnPalette('red');
+            $mdThemingProvider.setDefaultTheme('pageTheme');
+         }]);
+
+      function pageController( $scope, $mdSidenav, $http){
+         $scope.loadLists = function(){
+            $http.get('docs/projects.json').then(
+               function(response){
+                  $scope.projectList = response.data.projects;
+               },
+               function(response){
+                  window.alert( "Something Went Wrong :(");
+               });
+         };
+
+         $scope.openLeftMenu = function(){
+            $mdSidenav('left').toggle();
+         };
+      }
+   </script>
+
+   <body ng-app="firstApplication" ng-init="loadLists()" ng-controller="pageController" ng-cloak>
+      <div id="sideNavContainer" layout="row">
+         <md-sidenav md-component-id="left" class="md-sidenav-left">
+            <header>
+               <img src="resources/images/logo.jpg"></img>
+            </header>
+
+            <md-list>
+               <md-list-item class="md-1-line" ng-click="showProjectList = !showProjectList">
+                  <div class="md-list-item-text">
+                     <h4>Projects</h4>
+                  </div>
+                  <md-icon>chevron_right</md-icon>
+               </md-list-item>
+
+               <md-list-item ng-show="showProjectList" class="md-1-line" ng-repeat="project in projectList" ng-click="routeTo({{project.href}})">
+                  <div class="md-list-tem-text">
+                     <h4>{{project.name}}</h4>
+                  </div>
+               </md-list-item>
+
+               <md-list-item class="md-1-line" ng-click="routeTo(somewhere)">
+                  <div class="md-list-tem-text">
+                     <h4>Club Store</h4>
+                  </div>
+               </md-list-item>
+
+               <md-list-item class="md-1-line" ng-click="routeTo(somewhere)">
+                  <div class="md-list-tem-text">
+                     <h4>Contact Us</h4>
+                  </div>
+               </md-list-item>
+
+               <md-list-item class="md-1-line" ng-click="routeTo(somewhere)" >
+                  <div class="md-list-tem-text">
+                     <h4>About</h4>
+                  </div>
+               </md-list-item>
+
+            </md-list>
+         </md-sidenav>
+
+
+         <md-content>
+            <md-button ng-click="openLeftMenu()" class="md-icon-button md-primary" aria-label="Settings">
+               <md-icon md-svg-icon="resources/icons/menu.svg"></md-icon>
+            </md-button>
+
+            <h1 class="primaryTitle">CPRC</h1>
+            <h2 style="secondaryTitle">Cal Poly Robotics Club</h2>
+         </md-content>
+
+      </div>
    </body>
 </html>

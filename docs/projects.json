@@ -1,0 +1,20 @@
+{
+   "projects" : [
+      {
+         "name" : "IGVC",
+         "href" : "docs/projects/IGVC"
+      },
+      {
+         "name" : "UROV",
+         "href" : "docs/projects/UROV"
+      },
+      {
+         "name" : "BB8",
+         "href" : "docs/projects/BB8"
+      },
+      {
+         "name" : "Dance Button",
+         "href" : "docs/projects/Dance Button"
+      }
+   ]
+}
