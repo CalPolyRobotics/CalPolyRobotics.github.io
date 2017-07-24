@@ -2,19 +2,19 @@
    "projects" : [
       {
          "name" : "IGVC",
-         "href" : "docs/projects/IGVC.htm"
+         "href" : "projects/igvc.htm"
       },
       {
          "name" : "UROV",
-         "href" : "docs/projects/UROV.htm"
+         "href" : "projects/urov.htm"
       },
       {
          "name" : "BB8",
-         "href" : "docs/projects/BB8.htm"
+         "href" : "projects/bb8.htm"
       },
       {
          "name" : "Dance Button",
-         "href" : "docs/projects/Dance Button.htm"
+         "href" : "projects/dancebutton.htm"
       }
    ]
 }

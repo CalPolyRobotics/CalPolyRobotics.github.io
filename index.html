@@ -2,13 +2,7 @@
 <html lang="en">
    <head>
       <title>Cal Poly Robotics Club</title>
-<<<<<<< Updated upstream
-=======
-      <!-- Libraries -->
-      <!-- Imported Fonts -->
-      <!-- Global Scripts -->
 
->>>>>>> Stashed changes
       <!-- Favicons -->
 		<link rel="apple-touch-icon" sizes="180x180" href="resources/favicon/apple-touch-icon.png">
       <link rel="icon" type="image/png" sizes="32x32" href="resources/favicon/favicon-32x32.png">
@@ -30,6 +24,7 @@
 
       <!-- Local Scripts -->
       <script src="./javascripts/app.js"></script>
+      <script src="./javascripts/routing.js"></script>
 
       <!-- Local Stylesheets-->
       <link rel="stylesheet" href="stylesheets/style.css">
@@ -38,12 +33,15 @@
    <body ng-app="firstApplication" ng-init="loadLists()" ng-controller="pageController" ng-cloak>
       <div id="sideNavContainer" layout="row">
          <md-sidenav md-component-id="left" class="md-sidenav-left">
-            <div layout="row" layout-align="center center">
-               <img id="logo" src="resources/images/logo_clear.png"></img>
-            </div>
+               
+            <a ng-click="toggleLeftMenu()" ng-href="#!">
+               <div layout="row" layout-align="center center">
+                  <img id="logo" src="resources/images/logo_clear.png" ></img>
+               </div>
+            <a>
 
-            <md-list>
-               <md-list-item class="md-1-line" ng-click="showProjectList = !showProjectList" ng-class="{focus : showProjectList}">
+            <md-list id="navlist">
+               <md-list-item class="md-1-line list-item" ng-click="showProjectList = !showProjectList">
                   <div class="md-list-item-text">
                      <p>Projects</p>
                   </div>
@@ -51,25 +49,25 @@
                   <md-icon>chevron_right</md-icon>
                </md-list-item>
 
-               <md-list-item ng-show="showProjectList" class="md-1-line" ng-repeat="project in projectList" ng-click="routeTo()">
+               <md-list-item ng-show="showProjectList" class="md-1-line sublist-item" ng-repeat="project in projectList" ng-click="toggleLeftMenu()" ng-href="#!{{project.href}}">
                   <div class="md-list-item-text">
                      <p>{{project.name}}</p>
                   </div>
                </md-list-item>
 
-               <md-list-item class="md-1-line" ng-href="#!store">
+               <md-list-item class="md-1-line list-item" ng-click="toggleLeftMenu()" ng-href="#!store">
                   <div class="md-list-item-text">
                      <p>Club Store</p>
                   </div>
                </md-list-item>
 
-               <md-list-item class="md-1-line" ng-href="#!contact">
+               <md-list-item class="md-1-line list-item" ng-click="toggleLeftMenu()" ng-href="#!contact">
                   <div class="md-list-item-text">
                      <p>Contact Us</p>
                   </div>
                </md-list-item>
 
-               <md-list-item class="md-1-line" ng-href="#!about">
+               <md-list-item class="md-1-line list-item" ng-click="toggleLeftMenu()" ng-href="#!about">
                   <div class="md-list-item-text">
                      <p>About</p>
                   </div>
@@ -80,7 +78,7 @@
 
 
          <md-content>
-            <md-button ng-click="openLeftMenu()" class="md-icon-button md-primary" aria-label="Settings">
+            <md-button ng-click="toggleLeftMenu()" class="md-icon-button md-primary" aria-label="Settings">
                <md-icon md-svg-icon="resources/icons/menu.svg"></md-icon>
             </md-button>
 
@@ -90,11 +88,5 @@
 
       <!-- Applies individual htm pages-->
       <div ng-view></div>
-
-      <div class="titleBackground">
-         <h1 class="mainHeader">Cal Poly Robotics Club</h1>
-         <h2 style="secondaryTitle">"Learn with robots"</h2>
-      </div>
-
    </body>
 </html>

@@ -85,12 +85,16 @@ md-sidenav{
   background: #1A1A1A;
 }
 
-md-list-item:nth-child(1){
+md-list-item.list-item:nth-child(1){
    border-top: 1px solid #404040 
 }
 
-md-list-item{
+md-list-item.list-item{
    border-bottom: 1px solid #404040
+}
+
+.sublist-item p{
+   padding-left: 15px;
 }
 
 .md-list-item-text h4{
@@ -104,4 +108,15 @@ md-list-item{
 #logo{
    padding-top: 40px;
    padding-bottom: 30px;
+}
+
+/**
+ * md-list-items become encapsulated by <a> tags
+ * when an ng-href is added this is to remove the
+ * formatting that ensues
+ */
+#navlist a{
+   margin: 0;
+   padding-left: 15px;
+   padding-right: 15px;
 }
