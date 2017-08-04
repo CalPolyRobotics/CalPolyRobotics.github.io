@@ -1,0 +1,14 @@
+.mainTitle {
+    color: #E0E0E0;
+    padding-top: 25px;
+    font-size: 30px;
+}
+.mainLogo {
+    width:150px;
+    height: auto;
+}
+
+.headerBody {
+    background: #121212 url(../resources/images/backgrounds/black_mamba.png) 0 0 repeat;
+    padding: 0 10px 10px 10px;
+}
