@@ -22,118 +22,120 @@
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body ng-init="loadLists()" ng-controller="pageController" ng-cloak>
+  <div class="layer">
 
-  <div class="headerBody">
-    <div layout="row" layout-align="left center">
-      <img class="mainLogo" src="resources/images/logo_clear.png" ></img>
-      <h1 class="mainTitle">Cal Poly Robotics Club</h1>
-    </div>
-  </div>
-  <!--ul class="menu">
-    <li><a href="#!/view1">view1</a></li>
-    <li><a href="#!/view2">view2</a></li>
-  </ul-->
-
-  <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please
-        <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
-      </p>
-  <![endif]-->
-  <!--div ng-view></div-->
-
-<md-content hide-xs>
-  <md-nav-bar
-          md-selected-nav-item="home"
-          nav-bar-aria-label="navigation links">
-    <md-nav-item md-nav-href="#!main" name="home" value="home">Home</md-nav-item>
-    <md-nav-item md-nav-href="#!projects" name="projects">Projects</md-nav-item>
-    <md-nav-item md-nav-href="#!store" name="store">Club Store</md-nav-item>
-    <md-nav-item md-nav-href="#!contact" name="contact">Contact Us</md-nav-item>
-    <md-nav-item md-nav-href="#!about" name="about">About</md-nav-item>
-    <!-- these require actual routing with ui-router or ng-route, so they
-    won't work in the demo
-    <md-nav-item md-nav-href="#page4" name="page5">Page Four</md-nav-item>
-    <md-nav-item md-nav-sref="app.page5" name="page4">Page Five</md-nav-item>
-    You can also add options for the <code>ui-sref-opts</code> attribute.
-    <md-nav-item md-nav-sref="page6" sref-opts="{reload:true, notify:true}">
-      Page Six
-    </md-nav-item>
-    -->
-  </md-nav-bar>
-  <!--div class="ext-content">
-    External content for `<span>{{currentNavItem}}</span>`.
-  </div-->
-
-
-</md-content>
-
-<div>
-  <md-sidenav md-component-id="left" class="md-sidenav-left">
-
-    <a ng-click="toggleLeftMenu()" ng-href="#!">
-      <div layout="row" layout-align="center center">
-        <img id="logo" src="resources/images/logo_clear.png" ></img>
+    <div class="headerBody">
+      <div layout="row" layout-align="left center">
+        <img class="mainLogo" src="resources/images/logo_clear.png" ></img>
+        <h1 class="mainTitle">Cal Poly Robotics Club</h1>
       </div>
-    </a>
+    </div>
+    <!--ul class="menu">
+      <li><a href="#!/view1">view1</a></li>
+      <li><a href="#!/view2">view2</a></li>
+    </ul-->
 
-    <md-list id="navlist">
-      <md-list-item class="md-1-line list-item" ng-click="showProjectList = !showProjectList">
-        <div class="md-list-item-text">
-          <p>Projects</p>
-        </div>
-        <span flex></span>
-        <md-icon>chevron_right</md-icon>
-      </md-list-item>
+    <!--[if lt IE 7]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please
+          <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
+        </p>
+    <![endif]-->
+    <!--div ng-view></div-->
 
-      <md-list-item ng-show="showProjectList" class="md-1-line sublist-item" ng-repeat="project in projectList" ng-click="toggleLeftMenu()" ng-href="#!{{project.href}}">
-        <div class="md-list-item-text">
-          <p>{{project.name}}</p>
-        </div>
-      </md-list-item>
+  <md-content hide-xs class="clear-content">
+    <md-nav-bar
+            md-selected-nav-item="home"
+            nav-bar-aria-label="navigation links">
+      <md-nav-item md-nav-href="#!main" name="home" value="home">Home</md-nav-item>
+      <md-nav-item md-nav-href="#!projects" name="projects">Projects</md-nav-item>
+      <md-nav-item md-nav-href="#!store" name="store">Club Store</md-nav-item>
+      <md-nav-item md-nav-href="#!contact" name="contact">Contact Us</md-nav-item>
+      <md-nav-item md-nav-href="#!about" name="about">About</md-nav-item>
+      <!-- these require actual routing with ui-router or ng-route, so they
+      won't work in the demo
+      <md-nav-item md-nav-href="#page4" name="page5">Page Four</md-nav-item>
+      <md-nav-item md-nav-sref="app.page5" name="page4">Page Five</md-nav-item>
+      You can also add options for the <code>ui-sref-opts</code> attribute.
+      <md-nav-item md-nav-sref="page6" sref-opts="{reload:true, notify:true}">
+        Page Six
+      </md-nav-item>
+      -->
+    </md-nav-bar>
+    <!--div class="ext-content">
+      External content for `<span>{{currentNavItem}}</span>`.
+    </div-->
 
-      <md-list-item class="md-1-line list-item" ng-click="toggleLeftMenu()" ng-href="#!store">
-        <div class="md-list-item-text">
-          <p>Club Store</p>
-        </div>
-      </md-list-item>
-
-      <md-list-item class="md-1-line list-item" ng-click="toggleLeftMenu()" ng-href="#!contact">
-        <div class="md-list-item-text">
-          <p>Contact Us</p>
-        </div>
-      </md-list-item>
-
-      <md-list-item class="md-1-line list-item" ng-click="toggleLeftMenu()" ng-href="#!about">
-        <div class="md-list-item-text">
-          <p>About</p>
-        </div>
-      </md-list-item>
-
-    </md-list>
-  </md-sidenav>
-
-
-  <md-content hide-gt-xs>
-    <md-button ng-click="toggleLeftMenu()" class="md-icon-button md-primary" aria-label="Settings">
-      <md-icon md-svg-icon="resources/icons/menu.svg"></md-icon>
-    </md-button>
 
   </md-content>
 
-</div>
+  <div>
+    <md-sidenav md-component-id="left" class="md-sidenav-left">
 
-<!-- Applies individual htm pages-->
-<md-content layout-padding flex>
-  <div ng-view class="mainContent"></div>
-</md-content>
+      <a ng-click="toggleLeftMenu()" ng-href="#!">
+        <div layout="row" layout-align="center center">
+          <img id="logo" src="resources/images/logo_clear.png" ></img>
+        </div>
+      </a>
 
-<!-- Applies a sticky footer -->
-<md-bottom-sheet class="footerBody">
-  <div class="mainFooterContent">
-    <p>I am a sticky footer. I've got an MIT License and everything. JK.</p>
+      <md-list id="navlist">
+        <md-list-item class="md-1-line list-item" ng-click="showProjectList = !showProjectList">
+          <div class="md-list-item-text">
+            <p>Projects</p>
+          </div>
+          <span flex></span>
+          <md-icon>chevron_right</md-icon>
+        </md-list-item>
+
+        <md-list-item ng-show="showProjectList" class="md-1-line sublist-item" ng-repeat="project in projectList" ng-click="toggleLeftMenu()" ng-href="#!{{project.href}}">
+          <div class="md-list-item-text">
+            <p>{{project.name}}</p>
+          </div>
+        </md-list-item>
+
+        <md-list-item class="md-1-line list-item" ng-click="toggleLeftMenu()" ng-href="#!store">
+          <div class="md-list-item-text">
+            <p>Club Store</p>
+          </div>
+        </md-list-item>
+
+        <md-list-item class="md-1-line list-item" ng-click="toggleLeftMenu()" ng-href="#!contact">
+          <div class="md-list-item-text">
+            <p>Contact Us</p>
+          </div>
+        </md-list-item>
+
+        <md-list-item class="md-1-line list-item" ng-click="toggleLeftMenu()" ng-href="#!about">
+          <div class="md-list-item-text">
+            <p>About</p>
+          </div>
+        </md-list-item>
+
+      </md-list>
+    </md-sidenav>
+
+
+    <md-content hide-gt-xs class="clear-content">
+      <md-button ng-click="toggleLeftMenu()" class="md-icon-button md-primary" aria-label="Settings">
+        <md-icon md-svg-icon="resources/icons/menu.svg"></md-icon>
+      </md-button>
+
+    </md-content>
+
   </div>
-</md-bottom-sheet>
 
+  <!-- Applies individual htm pages-->
+  <md-content layout-padding flex class="clear-content">
+    <div ng-view class="mainContent"></div>
+  </md-content>
+
+  <!-- Applies a sticky footer -->
+  <md-bottom-sheet class="footerBody">
+    <div class="mainFooterContent">
+      <p>I am a sticky footer. I've got an MIT License and everything. JK.</p>
+    </div>
+  </md-bottom-sheet>
+
+  </div>
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
