@@ -9,6 +9,18 @@ var app = angular.module('myApp', [
   'myApp.version'
 ]);
 
+/*
+app.config(function($mdThemingProvider) {
+    $mdThemingProvider.disableTheming();
+});
+*/
+app.config(function($mdThemingProvider) {
+    $mdThemingProvider.theme('default')
+        .primaryPalette('pink')
+        .accentPalette('orange')
+        .warnPalette('orange');
+});
+
 app.config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.hashPrefix('!');
 
