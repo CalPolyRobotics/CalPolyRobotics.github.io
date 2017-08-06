@@ -1,27 +1,4 @@
-<p>main.htm</p>
-<p>Don't forget to set Home as default value selected</p>
-
-<h3>Mailing List</h3>
-<md-content class="md-no-momentum md-padding">
-    <md-input-container class="md-icon-float md-block">
-        <!-- Use floating label instead of placeholder -->
-        <label>Name</label>
-        <md-icon md-svg-src="resources/icons/ic_person_black_48px.svg" class="name"></md-icon>
-        <input ng-model="user.name" type="text">
-    </md-input-container>
-
-    <md-input-container md-icon-float class="md-block">
-        <md-icon md-svg-src="resources/icons/ic_school_black_48px.svg" class=""major"></md-icon>
-        <input ng-model="user.major" type="text" placeholder="Major">
-    </md-input-container>
-
-    <md-input-container class="md-block">
-        <!-- Use floating placeholder instead of label -->
-        <md-icon md-svg-src="resources/icons/ic_email_black_48px.svg" class="email"></md-icon>
-        <input ng-model="user.email" type="email" placeholder="Email (required)" ng-required="true">
-    </md-input-container>
-    <p>&lt;Form&gt; submit button goes here. Hopefully functionality doesn't get too intense.
-        Otherwise, just submit information to professor google groups.</p>
-</md-content>
-<h3>Calendar</h3>
-<h3>Here Maybe? Or does it belong on an Events page or something?</h3>
+<div id="main-content"layout="column" layout-align="center center">
+  <h1>CPRC</h1>
+  <md-button id="mail-button" ng-href="#!mailing">Join Mailing List</md-button> 
+</div>
