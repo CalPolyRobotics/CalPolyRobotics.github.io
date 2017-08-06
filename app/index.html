@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
-<body ng-init="loadLists()" ng-controller="pageController" ng-cloak>
+<body ng-init="loadLists()" ng-controller="pageController" ng-class="getClass('/main')" ng-cloak>
   <div class="layer">
 
     <div class="headerBody">
@@ -129,7 +129,7 @@
   </md-content>
 
   <!-- Applies a sticky footer -->
-  <md-bottom-sheet class="footerBody">
+  <md-bottom-sheet class="footerBody" ng-show="!homePage">
     <div class="mainFooterContent">
       <p>I am a sticky footer. I've got an MIT License and everything. JK.</p>
     </div>

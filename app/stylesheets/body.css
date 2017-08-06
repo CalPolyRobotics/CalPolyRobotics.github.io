@@ -1,5 +1,5 @@
-body{
-   background-image: url("../resources/images/backgrounds/bonderson.jpg");
+body.background-active{
+   background-image: url("../resources/images/backgrounds/mountainview.png");
    background-repeat: no-repeat;
    background-position: center center;
    background-attachment: fixed;
@@ -9,7 +9,7 @@ body{
    background-size: cover;
 }
 
-.layer{
+.background-active div.layer{
    background-color: rgba(59, 59, 59, 0.7);
    position: absolute;
    top: 0;

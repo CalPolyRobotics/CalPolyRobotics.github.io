@@ -16,7 +16,15 @@ app.config(['$locationProvider', '$routeProvider', function($locationProvider, $
 }]);
 
 app.controller('pageController', pageController);
-function pageController( $scope, $mdSidenav, $http){
+function pageController( $scope, $mdSidenav, $http, $location){
+    $scope.getClass = function(path){
+        if($location.path().substr(0, path.length) == path ){
+            return "background-active";
+        }else{
+            return "";
+        }
+    };
+
     $scope.loadLists = function(){
         $http.get('pages/projects/projects.json').then(
             function(response){
@@ -88,6 +96,9 @@ app.config(function($routeProvider) {
         .when("/about", {
             templateUrl : "pages/about.htm",
             controller : "aboutCtrl"
+        })
+        .when("/mailing", {
+            templateUrl : "pages/mailing.htm",
         })
         .when("/projects/:name",{
             templateUrl : function($routeParams) {
