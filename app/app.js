@@ -47,7 +47,7 @@ app.config(function($mdThemingProvider) {
         '800': '#6d8394',
         '900': '#7b909f',
         'A100': '#576977',
-        'A200': '#1985A1', // NavBar Highlight color
+        'A200': '#DCDCDD', // NavBar Highlight color
         'A400': '#414f59',
         'A700': '#8a9ca9'
     };

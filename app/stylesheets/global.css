@@ -1,8 +1,10 @@
 /* global css stylesheet */
 html, body{
   // font-family: 'Open Sans', sans-serif;
-  font-family: 'Montserrat', sans-serif;
+  // font-family: 'Montserrat', sans-serif;
   min-width: 345px;
+  // font-family: 'Montserrat', sans-serif;
+  // font-family: 'Open Sans Condensed', sans-serif;
 }
 
 .bodyFont {
