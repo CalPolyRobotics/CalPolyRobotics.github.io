@@ -15,10 +15,90 @@ app.config(function($mdThemingProvider) {
 });
 */
 app.config(function($mdThemingProvider) {
+    var customPrimary = {
+        '50': '#ffffff',
+        '100': '#ffffff',
+        '200': '#ffffff',
+        '300': '#f6f6f6',
+        '400': '#e9e9ea',
+        '500': '#DCDCDD',
+        '600': '#cfcfd0',
+        '700': '#c2c2c4',
+        '800': '#b5b5b7',
+        '900': '#a8a8ab',
+        'A100': '#ffffff',
+        'A200': '#ffffff',
+        'A400': '#ffffff',
+        'A700': '#9b9b9e'
+    };
+    $mdThemingProvider
+        .definePalette('customPrimary',
+            customPrimary);
+
+    var customAccent = {
+        '50': '#0b0e10',
+        '100': '#161b1e',
+        '200': '#21282d',
+        '300': '#2c353c',
+        '400': '#36424b',
+        '500': '#414f59',
+        '600': '#576977',
+        '700': '#627685',
+        '800': '#6d8394',
+        '900': '#7b909f',
+        'A100': '#576977',
+        'A200': '#1985A1', // NavBar Highlight color
+        'A400': '#414f59',
+        'A700': '#8a9ca9'
+    };
+    $mdThemingProvider
+        .definePalette('customAccent',
+            customAccent);
+
+    var customWarn = {
+        '50': '#55c7e5',
+        '100': '#3fc0e1',
+        '200': '#29b8de',
+        '300': '#20a9cd',
+        '400': '#1c97b7',
+        '500': '#1985A1',
+        '600': '#16738b',
+        '700': '#126175',
+        '800': '#0f4e5f',
+        '900': '#0b3c49',
+        'A100': '#6bcee8',
+        'A200': '#81d6eb',
+        'A400': '#97ddef',
+        'A700': '#082a33'
+    };
+    $mdThemingProvider
+        .definePalette('customWarn',
+            customWarn);
+
+    var customBackground = {
+        '50': '#84898e',
+        '100': '#777c81',
+        '200': '#6b6f74',
+        '300': '#5e6267',
+        '400': '#525659',
+        '500': '#46494C',
+        '600': '#3a3c3f',
+        '700': '#2e2f31',
+        '800': '#212324',
+        '900': '#151617',
+        'A100': '#91959a',
+        'A200': '#9ea2a6',
+        'A400': '#acafb2',
+        'A700': '#09090a'
+    };
+    $mdThemingProvider
+        .definePalette('customBackground',
+            customBackground);
     $mdThemingProvider.theme('default')
-        .primaryPalette('pink')
-        .accentPalette('orange')
-        .warnPalette('orange');
+        .primaryPalette('customPrimary')
+        .accentPalette('customAccent')
+        .warnPalette('customWarn')
+        .backgroundPalette('customBackground')
 });
 
 app.config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
@@ -88,7 +168,7 @@ app.controller('folderCtrl', function ($scope, $http) {
 // Route Configuration
 app.config(function($routeProvider) {
     $routeProvider
-        .when("/", {
+        .when("", {
             templateUrl : "pages/main.htm",
         })
         .when("/main", {

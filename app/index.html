@@ -23,12 +23,10 @@
 </head>
 <body ng-init="loadLists()" ng-controller="pageController" ng-class="getClass('/main')" ng-cloak>
   <div class="layer">
+      <div layout="row">
 
     <div class="headerBody">
-      <div layout="row" layout-align="left center">
-        <img class="mainLogo" src="resources/images/logo_clear.png" ></img>
         <h1 class="mainTitle">Cal Poly Robotics Club</h1>
-      </div>
     </div>
 
     <!--[if lt IE 7]>
@@ -38,7 +36,8 @@
     <![endif]-->
     <!--div ng-view></div-->
 
-  <md-content hide-xs class="clear-content">
+  <div flex>
+  <md-content hide-xs class="clear-content navBar">
     <md-nav-bar
             md-selected-nav-item="home"
             nav-bar-aria-label="navigation links">
@@ -64,7 +63,7 @@
 
   </md-content>
 
-  <div>
+  <div flex>
     <md-sidenav md-component-id="left" class="md-sidenav-left">
 
       <a ng-click="toggleLeftMenu()" ng-href="#!">
@@ -118,6 +117,8 @@
     </md-content>
 
   </div>
+  </div>
+      </div>
 
   <!-- Applies individual htm pages-->
   <md-content layout-padding flex class="clear-content">
@@ -125,11 +126,11 @@
   </md-content>
 
   <!-- Applies a sticky footer -->
-  <md-bottom-sheet class="footerBody" ng-show="!homePage">
+  <!--md-bottom-sheet class="footerBody" ng-show="!homePage">
     <div class="mainFooterContent">
       <p>I am a sticky footer. I've got an MIT License and everything. JK.</p>
     </div>
-  </md-bottom-sheet>
+  </md-bottom-sheet-->
 
   </div>
   <!-- In production use:

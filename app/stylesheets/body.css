@@ -28,6 +28,10 @@ body.background-active{
    margin-bottom: auto;
 }
 
+.mainTitleBorder {
+   text-shadow: -1px 0 #C5C3C6, 0 1px #C5C3C6, 1px 0 #C5C3C6, 0 -1px #C5C3C6;
+}
+
 #main-content h1{
    font-family: Georgia, Times, "Times New Roman", serif;
    font-size: 70pt;
@@ -40,5 +44,4 @@ body.background-active{
    color : rgb(49, 46, 46);
    background-color: rgba(155, 215, 155, 0.96);
    border-radius: 10px;
-   font-size: 
 }

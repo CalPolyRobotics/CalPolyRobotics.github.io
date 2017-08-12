@@ -1,13 +1,7 @@
-<div>
-    <h1>Super Cool Projects Page</h1>
-</div>
-<p>projects.htm</p>
 
-<div class="carouselBody">
+<!--div class="carouselBody">
     <div ng-controller="folderCtrl">
-        <!-- Carousel ================================================== -->
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
-            <!-- Indicators -->
             <ol class="carousel-indicators">
                 <li data-target="#myCarousel" ng-repeat="img in images" class="{active : (img === 0)}" data-slide-to="{{img}}"></li>
             </ol>
@@ -22,9 +16,7 @@
                 <span class="glyphicon glyphicon-chevron-left"></span></a>
             <a class="right carousel-control" role="button" data-slide="next">
                 <span class="glyphicon glyphicon-chevron-right"></span></a> </div>
-        <!-- /.carousel -->
 
-        <!-- Fixed navbar -->
         <div class="navbar navbar-default navbar-fixed-botom" role="navigation">
             <div class="container">
                 <div class="navbar-collapse collapse">
@@ -32,8 +24,42 @@
                         <li ng-repeat="folder in folders" class="{{activeFolder(folder)}}" ng-click="selectFolder(folder)"> <a ng-href="#{{folder}}">{{folder}}</a> </li>
                     </ul>
                 </div>
-                <!--/.nav-collapse -->
             </div>
         </div>
     </div>
-</div>
+</div-->
+
+<md-grid-list
+        md-cols-xs="1" md-cols-sm="2" md-cols-md="3"
+        md-row-height-gt-md="1:1" md-row-height="2:2"
+        md-gutter="25px" md-gutter-gt-sm="8px" >
+
+    <md-grid-tile class="green">
+        IGVC
+        <md-grid-tile-footer>
+            <h3>
+                The Autonomous Golf Cart
+            </h3>
+        </md-grid-tile-footer>
+    </md-grid-tile>
+    <md-grid-tile class="green">
+        U-ROV
+        <md-grid-tile-footer>
+            <h3>Sebastian</h3>
+        </md-grid-tile-footer>
+    </md-grid-tile>
+    <md-grid-tile class="green">
+        BB-8
+        <md-grid-tile-footer>
+            <h3>Blah</h3>
+        </md-grid-tile-footer>
+    </md-grid-tile>
+    <md-grid-tile class="green">
+        Foosball Table
+        <md-grid-tile-footer>
+            <h3>Blah</h3>
+        </md-grid-tile-footer>
+    </md-grid-tile>
+
+
+</md-grid-list>
