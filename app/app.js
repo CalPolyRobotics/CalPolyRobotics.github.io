@@ -104,7 +104,7 @@ app.config(function($mdThemingProvider) {
 app.config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.hashPrefix('!');
 
-  $routeProvider.otherwise({redirectTo: '/view1'});
+  $routeProvider.otherwise({redirectTo: '/main'});
 }]);
 
 app.controller('pageController', pageController);
