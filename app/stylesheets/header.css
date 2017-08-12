@@ -37,12 +37,16 @@ div.md-nav-bar {
     border: 0;
 }
 
-.navButton {
-    padding: 0 0 50px 0;
-    background: #46494C;
-}
-
 .mobileNavButton {
+    padding-top: 45px;
 }
 .menuIcon {
+}
+
+#headerButton {
+    margin-right: 15px;
+}
+#headerButtonContainer {
+    background: #46494C;
+    height: 90px;
 }
