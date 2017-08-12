@@ -1,6 +1,11 @@
 /* global css stylesheet */
 html, body{
-  font-family: 'Open Sans', sans-serif;
+  // font-family: 'Open Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.bodyFont {
+  font-family: 'Montserrat', sans-serif;
 }
 
 .menu {

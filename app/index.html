@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="stylesheets/footer.css">
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
@@ -37,7 +38,7 @@
     <!--div ng-view></div-->
 
   <div flex>
-  <md-content hide-xs class="clear-content navBar">
+  <md-content hide-xs hide-sm class="clear-content navBar">
     <md-nav-bar
             md-selected-nav-item="home"
             nav-bar-aria-label="navigation links">
@@ -109,9 +110,9 @@
     </md-sidenav>
 
 
-    <md-content hide-gt-xs class="clear-content">
-      <md-button ng-click="toggleLeftMenu()" class="md-icon-button md-primary" aria-label="Settings">
-        <md-icon md-svg-icon="resources/icons/menu.svg"></md-icon>
+    <md-content hide-gt-sm class="clear-content navButton">
+      <md-button click="toggleLeftMenu()" class="md-icon-button md-primary mobileNavButton" aria-label="Settings">
+        <md-icon md-svg-icon="resources/icons/menu.svg" class="menuIcon"></md-icon>
       </md-button>
 
     </md-content>
@@ -121,8 +122,8 @@
       </div>
 
   <!-- Applies individual htm pages-->
-  <md-content layout-padding flex class="clear-content">
-    <div ng-view class="mainContent"></div>
+  <md-content layout-padding flex class="clear-content bodyFont">
+    <div ng-view></div>
   </md-content>
 
   <!-- Applies a sticky footer -->
