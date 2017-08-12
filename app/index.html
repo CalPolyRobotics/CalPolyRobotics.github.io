@@ -32,112 +32,83 @@
           <h1 class="mainTitle">Cal Poly Robotics Club</h1>
       </div>
 
-    <!--[if lt IE 7]>
-        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please
-          <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
-        </p>
-    <![endif]-->
-    <!--div ng-view></div-->
-
-  <div flex>
-  <md-content hide-xs hide-sm class="clear-content navBar">
-    <md-nav-bar
-            md-selected-nav-item="home"
-            nav-bar-aria-label="navigation links">
-      <md-nav-item md-nav-href="#!main" name="home" value="home">Home</md-nav-item>
-      <md-nav-item md-nav-href="#!projects" name="projects">Projects</md-nav-item>
-      <md-nav-item md-nav-href="#!store" name="store">Club Store</md-nav-item>
-      <md-nav-item md-nav-href="#!contact" name="contact">Contact Us</md-nav-item>
-      <md-nav-item md-nav-href="#!about" name="about">About</md-nav-item>
-      <!-- these require actual routing with ui-router or ng-route, so they
-      won't work in the demo
-      <md-nav-item md-nav-href="#page4" name="page5">Page Four</md-nav-item>
-      <md-nav-item md-nav-sref="app.page5" name="page4">Page Five</md-nav-item>
-      You can also add options for the <code>ui-sref-opts</code> attribute.
-      <md-nav-item md-nav-sref="page6" sref-opts="{reload:true, notify:true}">
-        Page Six
-      </md-nav-item>
-      -->
-    </md-nav-bar>
-    <!--div class="ext-content">
-      External content for `<span>{{currentNavItem}}</span>`.
-    </div-->
+      <div flex>
+        <md-content hide-xs hide-sm class="clear-content navBar">
+          <md-nav-bar
+                  md-selected-nav-item="home"
+                  nav-bar-aria-label="navigation links">
+            <md-nav-item md-nav-href="#!main" name="home" value="home">Home</md-nav-item>
+            <md-nav-item md-nav-href="#!projects" name="projects">Projects</md-nav-item>
+            <md-nav-item md-nav-href="#!store" name="store">Club Store</md-nav-item>
+            <md-nav-item md-nav-href="#!contact" name="contact">Contact Us</md-nav-item>
+            <md-nav-item md-nav-href="#!about" name="about">About</md-nav-item>
+          </md-nav-bar>
+        </md-content>
 
 
-  </md-content>
+        <div flex>
+          <md-sidenav md-component-id="left" class="md-sidenav-left">
+
+            <a ng-click="toggleLeftMenu()" ng-href="#!">
+              <div layout="row" layout-align="center center">
+                <img id="logo" src="resources/images/logo_clear.png" ></img>
+              </div>
+            </a>
+
+            <md-list id="navlist">
+              <md-list-item class="md-1-line list-item" ng-click="showProjectList = !showProjectList">
+                <div class="md-list-item-text">
+                  <p>Projects</p>
+                </div>
+                <span flex></span>
+                <md-icon>chevron_right</md-icon>
+              </md-list-item>
+
+              <md-list-item ng-show="showProjectList" class="md-1-line sublist-item" ng-repeat="project in projectList" ng-click="toggleLeftMenu()" ng-href="#!{{project.href}}">
+                <div class="md-list-item-text">
+                  <p>{{project.name}}</p>
+                </div>
+              </md-list-item>
+
+              <md-list-item class="md-1-line list-item" ng-click="toggleLeftMenu()" ng-href="#!store">
+                <div class="md-list-item-text">
+                  <p>Club Store</p>
+                </div>
+              </md-list-item>
+
+              <md-list-item class="md-1-line list-item" ng-click="toggleLeftMenu()" ng-href="#!contact">
+                <div class="md-list-item-text">
+                  <p>Contact Us</p>
+                </div>
+              </md-list-item>
+
+              <md-list-item class="md-1-line list-item" ng-click="toggleLeftMenu()" ng-href="#!about">
+                <div class="md-list-item-text">
+                  <p>About</p>
+                </div>
+              </md-list-item>
+
+            </md-list>
+          </md-sidenav>
 
 
-  <div flex>
-    <md-sidenav md-component-id="left" class="md-sidenav-left">
+          <md-content hide-gt-sm class="clear-content">
+            <div id="headerButtonContainer" layout="column" layout-align="center end">
+              <md-button id="headerButton" ng-click="toggleLeftMenu()" class="md-icon-button md-primary mobileNavButton" aria-label="Settings">
+                <md-icon md-svg-icon="resources/icons/menu.svg" class="menuIcon"></md-icon>
+              </md-button>
+            </div>
 
-      <a ng-click="toggleLeftMenu()" ng-href="#!">
-        <div layout="row" layout-align="center center">
-          <img id="logo" src="resources/images/logo_clear.png" ></img>
+          </md-content>
         </div>
-      </a>
-
-      <md-list id="navlist">
-        <md-list-item class="md-1-line list-item" ng-click="showProjectList = !showProjectList">
-          <div class="md-list-item-text">
-            <p>Projects</p>
-          </div>
-          <span flex></span>
-          <md-icon>chevron_right</md-icon>
-        </md-list-item>
-
-        <md-list-item ng-show="showProjectList" class="md-1-line sublist-item" ng-repeat="project in projectList" ng-click="toggleLeftMenu()" ng-href="#!{{project.href}}">
-          <div class="md-list-item-text">
-            <p>{{project.name}}</p>
-          </div>
-        </md-list-item>
-
-        <md-list-item class="md-1-line list-item" ng-click="toggleLeftMenu()" ng-href="#!store">
-          <div class="md-list-item-text">
-            <p>Club Store</p>
-          </div>
-        </md-list-item>
-
-        <md-list-item class="md-1-line list-item" ng-click="toggleLeftMenu()" ng-href="#!contact">
-          <div class="md-list-item-text">
-            <p>Contact Us</p>
-          </div>
-        </md-list-item>
-
-        <md-list-item class="md-1-line list-item" ng-click="toggleLeftMenu()" ng-href="#!about">
-          <div class="md-list-item-text">
-            <p>About</p>
-          </div>
-        </md-list-item>
-
-      </md-list>
-    </md-sidenav>
-
-
-    <md-content hide-gt-sm class="clear-content">
-      <div id="headerButtonContainer" layout="column" layout-align="center end">
-        <md-button id="headerButton" ng-click="toggleLeftMenu()" class="md-icon-button md-primary mobileNavButton" aria-label="Settings">
-          <md-icon md-svg-icon="resources/icons/menu.svg" class="menuIcon"></md-icon>
-      </md-button>
       </div>
-
-    </md-content>
-
-  </div>
-  </div>
-      </div>
-
-  <!-- Applies individual htm pages-->
-  <!-- TODO IF ever change height of header navbar, this needs to be update -->
-  <md-content layout-padding flex class="clear-content" style="height: -webkit-calc(100% - 98px)">
-    <div ng-view flex layout-fill style="height: 100%"></div>
-  </md-content>
-
-  <!-- Applies a sticky footer -->
-  <!--md-bottom-sheet class="footerBody" ng-show="!homePage">
-    <div class="mainFooterContent">
-      <p>I am a sticky footer. I've got an MIT License and everything. JK.</p>
     </div>
-  </md-bottom-sheet-->
+
+    <!-- Applies individual htm pages-->
+    <!-- TODO IF ever change height of header navbar, this needs to be update -->
+    <md-content layout-padding flex class="clear-content" style="height: -webkit-calc(100% - 98px)">
+      <div ng-view flex layout-fill style="height: 100%"></div>
+    </md-content>
 
   </div>
   <!-- In production use:
