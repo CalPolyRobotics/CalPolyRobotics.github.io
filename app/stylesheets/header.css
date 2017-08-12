@@ -38,12 +38,11 @@ div.md-nav-bar {
 }
 
 .navButton {
-    padding: 15px 15px 40px 15px;
+    padding: 0 0 50px 0;
     background: #46494C;
 }
 
 .mobileNavButton {
-    height: 100px;
 }
 .menuIcon {
 }
