@@ -41,7 +41,10 @@ body.background-active{
 }
 
 #mail-button{
-   color : rgb(49, 46, 46);
-   background-color: rgba(155, 215, 155, 0.96);
-   border-radius: 10px;
+   color : gainsboro;
+   background-color: rgba(70, 73, 76, 0.9);
+   border-radius: 20px;
+   box-shadow: 1px 1px 1px black;
+   padding: 0 20px;
+   text-transform: none;
 }

@@ -24,11 +24,11 @@
 </head>
 <body ng-init="loadLists()" ng-controller="pageController" ng-class="getClass('/main')" ng-cloak>
   <div class="layer">
-      <div layout="row">
+    <div layout="row">
 
-    <div class="headerBody">
-        <h1 class="mainTitle">Cal Poly Robotics Club</h1>
-    </div>
+      <div class="headerBody">
+          <h1 class="mainTitle">Cal Poly Robotics Club</h1>
+      </div>
 
     <!--[if lt IE 7]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please
@@ -63,6 +63,7 @@
 
 
   </md-content>
+
 
   <div flex>
     <md-sidenav md-component-id="left" class="md-sidenav-left">
@@ -122,8 +123,9 @@
       </div>
 
   <!-- Applies individual htm pages-->
-  <md-content layout-padding flex class="clear-content bodyFont">
-    <div ng-view></div>
+  <!-- TODO IF ever change height of header navbar, this needs to be update -->
+  <md-content layout-padding flex class="clear-content" style="height: -webkit-calc(100% - 98px)">
+    <div ng-view flex layout-fill style="height: 100%"></div>
   </md-content>
 
   <!-- Applies a sticky footer -->
