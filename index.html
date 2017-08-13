@@ -1,18 +1,25 @@
 <!DOCTYPE html>
-<html lang="en" >
 <head>
+  <title>Cal Poly Robotics Club</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="apple-touch-icon" sizes="180x180" href="resources/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="resources/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="resources/favicon/favicon-16x16.png">
+  <link rel="manifest" href="resources/favicon/manifest.json">
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans+Condensed:300" rel="stylesheet">
+  <link rel="stylesheet" href="stylesheets/global.css">
+  <link rel="stylesheet" href="stylesheets/background.css">
 </head>
 
-<body ng-app="myApp" ng-cloak>
+<body ng-app="myApp" ng-init="loadLists()" ng-controller="pageController" ng-class="backgroundClass('/main')" ng-cloak>
 
-<div layout="row" layout-align="left center"><!-- Start Header Content -->
+<div layout="row" layout-align="left center" class="header"><!-- Start Header Content -->
 
   <!-- Robotics Club Title -->
-  <div class="headerBody header">
-    <h1 class="mainTitle">Cal Poly Robotics Club</h1>
-  </div>
+  <h3 hide-xs hide-sm class="mainTitle">Cal Poly Robotics Club</h3>
+  <a hide-gt-sm ng-href="#!/main" style="color:transparent;"><h3 class="mainTitle">Cal Poly Robotics Club</h3></a>
 
   <!-- Desktop Navigation Bar -->
   <div flex>
@@ -68,7 +75,7 @@
 
   <!-- Mobile Menu Button -->
   <div id="headerButtonContainer" layout="column" layout-align="center end">
-  <md-content hide-gt-sm class="clear-content">
+  <md-content hide-gt-sm class="color-primary">
       <md-button id="headerButton" ng-click="toggleLeftMenu()" class="md-icon-button md-primary mobileNavButton" aria-label="Settings">
         <md-icon md-svg-icon="resources/icons/menu.svg" class="menuIcon"></md-icon>
       </md-button>
@@ -78,7 +85,7 @@
 </div><!-- End Header Content -->
 
   <!-- TODO IF ever change height of header navbar, this needs to be update -->
-  <md-content layout-padding flex class="clear-content" style="height: -webkit-calc(100% - 98px)">
+  <md-content flex class="clear-content fill-page">
     <div ng-view flex layout-fill style="height: 100%"></div>
   </md-content>
 

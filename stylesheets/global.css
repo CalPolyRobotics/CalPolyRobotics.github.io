@@ -9,6 +9,8 @@ h1{
   letter-spacing: 12pt;
   color: #C5C3C6;
   text-shadow: 0 1px 2px black;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 h2{
@@ -16,12 +18,16 @@ h2{
   font-size: 70pt;
   color: #C5C3C6;
   text-shadow: 0 1px 2px black;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 h3{
   font-family: 'Open Sans Condensed', sans-serif;
   font-size: 25px;
   color: #C5C3C6;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 h4{
@@ -37,11 +43,22 @@ h6{
 }
 
 .header {
-    background-color: #46494C;
+  background-color: #46494C;
+  height: 84px;
+}
+
+/** Relies on the header being 84px **/
+.fill-page {
+  height: -webkit-calc(100% - 84px);
 }
 
 .color-primary{
   background: #46494C;
+}
+
+.slim {
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .button-med{

@@ -12,7 +12,7 @@ app.config(['$locationProvider', '$routeProvider', function($locationProvider, $
 
 app.controller('pageController', pageController);
 function pageController( $scope, $mdSidenav, $http, $location){
-    $scope.getClass = function(path){
+    $scope.backgroundClass= function(path){
         if($location.path().substr(0, path.length) == path ){
             return "background-active";
         }else{
