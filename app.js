@@ -40,28 +40,25 @@ function pageController( $scope, $mdSidenav, $http, $location){
 app.config(function($routeProvider) {
     $routeProvider
         .when("", {
-            templateUrl : "pages/main.htm",
+            templateUrl : "pages/main.htm"
         })
         .when("/main", {
-            templateUrl : "pages/main.htm",
+            templateUrl : "pages/main.htm"
         })
         .when("/projects", {
             templateUrl : "pages/projects.htm"
         })
         .when("/store", {
-            templateUrl : "pages/store.htm",
-            controller : "storeCtrl"
+            templateUrl : "pages/store.htm"
         })
         .when("/contact", {
-            templateUrl : "pages/contact.htm",
-            controller : "contactCtrl"
+            templateUrl : "pages/contact.htm"
         })
         .when("/about", {
-            templateUrl : "pages/about.htm",
-            controller : "aboutCtrl"
+            templateUrl : "pages/about.htm"
         })
         .when("/mailing", {
-            templateUrl : "pages/mailing.htm",
+            templateUrl : "pages/mailing.htm"
         })
         .when("/projects/:name",{
             templateUrl : function($routeParams) {
