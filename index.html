@@ -6,7 +6,14 @@
 </head>
 
 <body ng-app="myApp" ng-cloak>
-  <md-content class="clear-content navBar">
+
+<div layout="row" layout-align="left center">
+
+  <div class="headerBody header">
+    <h1 class="mainTitle">Cal Poly Robotics Club</h1>
+  </div>
+
+  <md-content hide-xs hide-sm class="clear-content navBar">
     <md-nav-bar
             md-selected-nav-item="home"
             nav-bar-aria-label="navigation links">
@@ -17,6 +24,51 @@
       <md-nav-item md-nav-href="#!about" name="about">About</md-nav-item>
     </md-nav-bar>
   </md-content>
+
+  <md-sidenav md-component-id="left" class="md-sidenav-left">
+    <a ng-click="toggleLeftMenu()" ng-href="#!">
+      <div layout="row" layout-align="center center">
+      </div>
+    </a>
+    <md-list id="navlist">
+      <md-list-item class="md-1-line list-item" ng-click="showProjectList = !showProjectList">
+        <div class="md-list-item-text">
+          <p>Projects</p>
+        </div>
+        <span flex></span>
+        <md-icon>chevron_right</md-icon>
+      </md-list-item>
+      <md-list-item ng-show="showProjectList" class="md-1-line sublist-item" ng-repeat="project in projectList" ng-click="toggleLeftMenu()" ng-href="#!{{project.href}}">
+        <div class="md-list-item-text">
+          <p>{{project.name}}</p>
+        </div>
+      </md-list-item>
+      <md-list-item class="md-1-line list-item" ng-click="toggleLeftMenu()" ng-href="#!store">
+        <div class="md-list-item-text">
+          <p>Club Store</p>
+        </div>
+      </md-list-item>
+      <md-list-item class="md-1-line list-item" ng-click="toggleLeftMenu()" ng-href="#!contact">
+        <div class="md-list-item-text">
+          <p>Contact Us</p>
+        </div>
+      </md-list-item>
+      <md-list-item class="md-1-line list-item" ng-click="toggleLeftMenu()" ng-href="#!about">
+        <div class="md-list-item-text">
+          <p>About</p>
+        </div>
+      </md-list-item>
+    </md-list>
+  </md-sidenav>
+  <md-content hide-gt-sm class="clear-content">
+    <div id="headerButtonContainer" layout="column" layout-align="center end">
+      <md-button id="headerButton" ng-click="toggleLeftMenu()" class="md-icon-button md-primary mobileNavButton" aria-label="Settings">
+        <md-icon md-svg-icon="resources/icons/menu.svg" class="menuIcon"></md-icon>
+      </md-button>
+    </div>
+  </md-content>
+</div>
+
 
   <!-- TODO IF ever change height of header navbar, this needs to be update -->
   <md-content layout-padding flex class="clear-content" style="height: -webkit-calc(100% - 98px)">
