@@ -7,12 +7,15 @@
 
 <body ng-app="myApp" ng-cloak>
 
-<div layout="row" layout-align="left center">
+<div layout="row" layout-align="left center"><!-- Start Header Content -->
 
+  <!-- Robotics Club Title -->
   <div class="headerBody header">
     <h1 class="mainTitle">Cal Poly Robotics Club</h1>
   </div>
 
+  <!-- Desktop Navigation Bar -->
+  <div flex>
   <md-content hide-xs hide-sm class="clear-content navBar">
     <md-nav-bar
             md-selected-nav-item="home"
@@ -24,7 +27,9 @@
       <md-nav-item md-nav-href="#!about" name="about">About</md-nav-item>
     </md-nav-bar>
   </md-content>
+  </div>
 
+  <!-- Mobile Sidebar Functionality -->
   <md-sidenav md-component-id="left" class="md-sidenav-left">
     <a ng-click="toggleLeftMenu()" ng-href="#!">
       <div layout="row" layout-align="center center">
@@ -60,15 +65,17 @@
       </md-list-item>
     </md-list>
   </md-sidenav>
+
+  <!-- Mobile Menu Button -->
+  <div id="headerButtonContainer" layout="column" layout-align="center end">
   <md-content hide-gt-sm class="clear-content">
-    <div id="headerButtonContainer" layout="column" layout-align="center end">
       <md-button id="headerButton" ng-click="toggleLeftMenu()" class="md-icon-button md-primary mobileNavButton" aria-label="Settings">
         <md-icon md-svg-icon="resources/icons/menu.svg" class="menuIcon"></md-icon>
       </md-button>
-    </div>
   </md-content>
-</div>
+  </div>
 
+</div><!-- End Header Content -->
 
   <!-- TODO IF ever change height of header navbar, this needs to be update -->
   <md-content layout-padding flex class="clear-content" style="height: -webkit-calc(100% - 98px)">
