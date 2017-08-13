@@ -1,0 +1,23 @@
+body.background-active{
+   background-image: url("../resources/images/backgrounds/bonderson.jpg");
+   background-repeat: no-repeat;
+   background-position: center center;
+   background-attachment: fixed;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+}
+
+.background-active div.overlay{
+   background-color: rgba(59, 59, 59, 0.7);
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+}
+
+.clear-content{
+   background-color: transparent;
+}
