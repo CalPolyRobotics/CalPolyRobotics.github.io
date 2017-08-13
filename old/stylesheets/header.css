@@ -1,0 +1,60 @@
+.mainTitle {
+    color: #DCDCDD;
+    // text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    padding: 15px 15px 15px 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 25px;
+    display: inline-flex;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.mainLogo {
+    width:150px;
+    height: auto;
+}
+
+.headerBody {
+    // background: #46494C url(../resources/images/backgrounds/black_mamba.png) 0 0 repeat;
+    background-color: #46494C;
+}
+
+.headerBorder {
+    box-shadow: 0 1px 2px #4C5C68;
+}
+
+.navBar {
+    background: #46494C;
+    // url(../resources/images/backgrounds/light_mamba_2.png) 0 0 repeat;
+    // text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    padding: 20px 0 20px 0;
+}
+
+md-nav-bar md-nav-ink-bar {
+    background: #1985A1;
+
+}
+
+md-nav-bar .md-button._md-nav-button.md-unselected {
+    // text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    color: #DCDCDD;
+}
+
+div.md-nav-bar {
+    border: 0;
+}
+
+.mobileNavButton {
+    padding-top: 45px;
+}
+.menuIcon {
+}
+
+#headerButton {
+    margin-right: 15px;
+}
+#headerButtonContainer {
+    background: #46494C;
+    height: 90px;
+}
