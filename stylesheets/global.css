@@ -80,7 +80,14 @@ md-nav-bar md-nav-ink-bar {
     background: #1985A1;
 }
 
+.md-button.md-default-theme.md-accent, .md-button.md-accent {
+  color: gainsboro;
+}
+
 md-nav-bar .md-button._md-nav-button.md-unselected {
     color: gainsboro;
 }
 
+#gform {
+    min-width: 480px;
+}
