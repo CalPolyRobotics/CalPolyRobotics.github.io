@@ -2,9 +2,6 @@
 <div layout="row" layout-align="center">
     <h3>Join Mailing List</h3>
 </div>
-<div layout="row" layout-align="center">
-    <p>Cool paragraph of the type of content we email goes here</p>
-</div>
 </md-content>
 <!--md-content class="md-no-momentum md-padding">
    <md-input-container class="md-icon-float md-block">
@@ -45,7 +42,9 @@
         <input ng-model="user.email" type="email" placeholder="Email (required)" name="entry.1892370577" id="entry.1892370577" ng-regired="true">
     </md-input-container>
 
-    <input type="submit" value="Submit">
+    <div layout="row" layout-align="center">
+        <input type="submit" value="Submit" class="fsSubmitButton">
+    </div>
 </form>
 <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
 </md-content>
