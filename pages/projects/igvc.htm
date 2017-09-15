@@ -1,2 +1,9 @@
-<p>igvc.htm</p>
-<p>This is IGVC's page!</p>
+<div ng-controller='projectsController' >
+	<h1>{{title | uppercase}}</h1>
+	<div ng-repeat='data in display_data'>
+		<h2>{{data.heading}}</h2>
+		<p>{{data.text}}</p>
+		<img ng-src="{{data.image}}" alt = "{{data.heading}}" height="200" width="200" align="left" hspace="10" vspace="10">
+		<!--<br clear="all"/>-->
+	</div>
+</div>

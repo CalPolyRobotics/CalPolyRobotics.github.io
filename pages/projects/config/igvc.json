@@ -1,0 +1,14 @@
+{
+	"data" : [
+		{
+			"heading" : "Introduction",
+			"text" : "IVGC is also know as the autonomous golfcart project. We should probably rename it because we do not compete in the IGVC competition.",
+			"image" : "/resources/images/test/igvc_cat.jpeg"
+		},
+		{
+			"heading" : "Electrical",
+			"text" : "We made our own boards and stuff.",
+			"image" : "/resources/images/test/urov_cat.jpeg"
+		}
+	]
+}
