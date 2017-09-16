@@ -1,11 +1,23 @@
 :root {
-  --textColor: #000000;
-  --navbarTextColor: #FFFFFF;
-  --bodyTextColor: #000000;
+    --textColor: #000000;
+    --navbarTextColor: #FFFFFF;
+    --bodyTextColor: #000000;
+    --sm-size: 640px;
+    --md-size: 826px;
+    --lg-size: 1000px;
 }
 /* global css stylesheet */
 html, body{
-  min-width: 345px;
+  // min-width: 345px;
+}
+
+.content {
+    max-width:1000px;
+    margin:0 auto;
+    text-align:left;
+    padding:15px;
+    // border:1px dashed #333;
+    // background-color:#eee;
 }
 
 h1{
@@ -14,17 +26,20 @@ h1{
   letter-spacing: 12pt;
   color: #C5C3C6;
   text-shadow: 0 1px 2px black;
-  padding-left: 10px;
-  padding-right: 10px;
 }
 
 h2{
-  //font-family: 'Open Sans Condensed', sans-serif;
-  font-size: 70pt;
-  color: #C5C3C6;
-  text-shadow: 0 1px 2px black;
-  padding-left: 10px;
-  padding-right: 10px;
+    transition: none;
+    text-align: inherit;
+    line-height: 39px;
+    border-width: 0px;
+    margin: 0px;
+    padding: 0px;
+    letter-spacing: 2px;
+    font-weight: 300;
+    font-size: 32px;
+    font-family: "Dosis", Arial, Helvetica, sans-serif;
+    color: #FFFFFF;
 }
 
 h3{
@@ -58,11 +73,15 @@ p {
 }
 
 .logo {
-  color: var(--navbarTextColor);
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+    color: var(--navbarTextColor);
+    text-decoration: none;
+    white-space: nowrap;
 }
 
 .header {
-  background-color: #46494C;
+  background-color: #000000;
+  font-family: 'Raleway', Arial, Helvetica, sans-serif;
   height: 84px;
 }
 
@@ -81,6 +100,14 @@ p {
 }
 
 .button-med{
+    color: #FFFFFF;
+    border: solid 1px white;
+
+    font-family: "Dosis", Arial, Helvetica, sans-serif;
+    line-height: 39px;
+    letter-spacing: 2px;
+    font-weight: 300;
+    /*
   padding: 0 20px;
   box-shadow: 1px 1px 1px black;
   border-radius: 20px;
@@ -88,6 +115,7 @@ p {
   color: gainsboro;
   font-family: 'Montserrat', sans-serif;
   text-transform: none;
+  */
 }
 
 div.md-nav-bar {
@@ -96,11 +124,19 @@ div.md-nav-bar {
 }
 
 md-nav-bar md-nav-ink-bar {
-    background: #1985A1;
+    // background: #1985A1;
+    // background: #FAB702;
+    background: none;
 }
 
+._md-nav-bar-list {
+    background-color: #000000;
+    padding-top: 10px;
+}
 .md-button.md-default-theme.md-accent, .md-button.md-accent {
     color: var(--navbarTextColor);
+    color: #FAB702;
+    font-weight: bold;
 }
 
 md-nav-bar .md-button._md-nav-button.md-unselected {
@@ -110,3 +146,4 @@ md-nav-bar .md-button._md-nav-button.md-unselected {
 #gform {
     min-width: 480px;
 }
+
