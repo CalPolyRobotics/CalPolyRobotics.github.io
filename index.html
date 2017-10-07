@@ -1,126 +1,57 @@
 <!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
 <head>
-  <title>Cal Poly Robotics Club</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#ffffff">
-  <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous"-->
-  <link rel="apple-touch-icon" sizes="180x180" href="resources/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="resources/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="resources/favicon/favicon-16x16.png">
-  <link rel="image" type="image/jpeg" href="resources/images/test/bb8_cat.jpeg">
-  <link rel="image" type="image/jpeg" href="resources/images/test/dance_button_cat.jpeg">
-  <link rel="image" type="image/jpeg" href="resources/images/test/igvc_cat.jpeg">
-  <link rel="image" type="image/jpeg" href="resources/images/test/urov_cat.jpeg">
-  <link rel="manifest" href="resources/favicon/manifest.json">
-  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans+Condensed:300" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-  <link rel="stylesheet" href="stylesheets/global.css">
-  <link rel="stylesheet" href="stylesheets/background.css">
-  <link rel="stylesheet" href="stylesheets/components.css">
+
+    <!-- Meta-Information -->
+    <title>Cal Poly Robotics Club</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="Cal Poly Robotics Club">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Vendor: Bootstrap Stylesheets http://getbootstrap.com -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Our Website CSS Styles -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/background.css">
+    <link href="./resources/libraries/v-accordion.css" rel="stylesheet" />
+
 </head>
+<body ng-app="tutorialWebApp" ng-class="{active: isActive('/')}">
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
 
-<body ng-app="myApp" ng-init="loadLists()" ng-controller="pageController" ng-class="backgroundClass('/main')" ng-cloak>
-
-<div layout="row" class="header"><!-- Start Header Content -->
-
-  <!-- Robotics Club Title -->
-  <!--h3 hide-xs hide-sm class="logo">Cal Poly Robotics Club</h3-->
-  <!--h3 class="logo">Cal Poly Robotics Club</h3-->
-  <!--a hide-gt-sm ng-href="#!/main" style="color:transparent;"><h3 class="mainTitle">Cal Poly Robotics Club</h3></a-->
-  <a ng-href="#!/main" class="logo"><h3>Cal Poly Robotics Club</h3></a>
-
-  <!-- Desktop Navigation Bar -->
-  <!--div flex-->
-  <md-content class="header">
-  <!--md-content hide-xs hide-sm class="clear-content navBar"-->
-    <md-nav-bar
-            md-selected-nav-item="home"
-            nav-bar-aria-label="navigation links">
-      <md-nav-item md-nav-href="#!main" name="home" value="home">Home</md-nav-item>
-      <md-nav-item md-nav-href="#!projects" name="projects">Projects</md-nav-item>
-      <md-nav-item md-nav-href="#!calendar" name="calendar">Calendar</md-nav-item>
-      <md-nav-item md-nav-href="#!store" name="store">Club Store</md-nav-item>
-      <md-nav-item md-nav-href="#!contact" name="contact">Contact Us</md-nav-item>
-      <md-nav-item md-nav-href="#!about" name="about">About</md-nav-item>
-    </md-nav-bar>
-  </md-content>
-  <!--/div-->
-
-  <!-- Mobile Sidebar Functionality -->
-  <!--md-sidenav md-component-id="left" class="md-sidenav-left">
-    <a ng-click="toggleLeftMenu()" ng-href="#!">
-      <div layout="row" layout-align="center center">
-      </div>
-    </a>
-    <md-list id="navlist">
-      <md-list-item class="md-1-line list-item" ng-click="showProjectList = !showProjectList">
-        <div class="md-list-item-text">
-          <p>Projects</p>
-        </div>
-        <span flex></span>
-        <md-icon>chevron_right</md-icon>
-      </md-list-item>
-      <md-list-item ng-show="showProjectList" class="md-1-line sublist-item" ng-repeat="project in projectList" ng-click="toggleLeftMenu()" ng-href="#!{{project.href}}">
-        <div class="md-list-item-text">
-          <p>{{project.name}}</p>
-        </div>
-      </md-list-item>
-      <md-list-item class="md-1-line list-item" ng-click="toggleLeftMenu()" ng-href="#!store">
-        <div class="md-list-item-text">
-          <p>Club Store</p>
-        </div>
-      </md-list-item>
-      <md-list-item class="md-1-line list-item" ng-click="toggleLeftMenu()" ng-href="#!contact">
-        <div class="md-list-item-text">
-          <p>Contact Us</p>
-        </div>
-      </md-list-item>
-      <md-list-item class="md-1-line list-item" ng-click="toggleLeftMenu()" ng-href="#!about">
-        <div class="md-list-item-text">
-          <p>About</p>
-        </div>
-      </md-list-item>
-    </md-list>
-  </md-sidenav-->
-
-  <!-- Mobile Menu Button -->
-  <!--div id="headerButtonContainer" layout="column" layout-align="center end">
-  <md-content hide-gt-sm class="color-primary">
-      <md-button id="headerButton" ng-click="toggleLeftMenu()" class="md-icon-button md-primary mobileNavButton" aria-label="Settings">
-        <md-icon md-svg-icon="resources/icons/menu.svg" class="menuIcon"></md-icon>
-      </md-button>
-  </md-content>
-  </div-->
+<!-- Our Website Content Goes Here -->
+<div ng-include='"templates/header.html"'></div>
+<div ng-view></div>
+<!--div ng-include='"templates/footer.html"'></div>
 
 
-</div><!-- End Header Content -->
-  <!-- TODO IF ever change height of header navbar, this needs to be update -->
-  <md-content flex class="clear-content fill-page">
-    <div ng-view flex layout-fill style="height: 100%"></div>
-  </md-content>
+<!-- Vendor: Javascripts -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
-<!-- Angular Material requires Angular.js Libraries -->
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-animate.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-aria.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-messages.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-route.js"></script>
-<!-- Angular Material Library & Application Bootstrap -->
-<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
-<script src="./app.js"></script>
-<script src="./page_controller.js"></script>
-<script src="./projects_controller.js"></script>
+<!-- Vendor: Angular, followed by our custom Javascripts -->
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular-route.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.min.js"></script>
+<script src="./resources/libraries/v-accordion.js"></script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript">var submitted=false;</script>
-<script type="text/javascript">
-    $('#gform').on('submit', function(e) {
-        $('#gform *').fadeOut(2000);
-        $('#gform').prepend('Your submission has been processed...');
-    });
-</script>
+
+<!-- Our Website Javascripts -->
+<script src="js/main.js"></script>
 
 </body>
 </html>
