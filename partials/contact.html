@@ -7,20 +7,11 @@
             <h1 class="page-header">Contact
             </h1>
             <ol class="breadcrumb">
-                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#/">Home</a></li>
                 <li class="active">Contact</li>
             </ol>
         </div>
 
-        <div class="col-lg-12">
-            <!-- Embedded Google Map using an iframe - to select your location find it on Google maps and paste the link as the iframe src. If you want to use the Google Maps API instead then have at it! -->
-            <iframe width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3256.140417915826!2d-120.66639848444082!3d35.30249228028445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80ecf1b493877849%3A0x9f9dd80f69dcf021!2sBonderson+Engineering+Center%2C+San+Luis+Obispo%2C+CA+93405!5e0!3m2!1sen!2sus!4v1506206007117"
-                    width="600" height="450" frameborder="0" style="border:0" allowfullscreen>
-
-            </iframe>
-
-        </div>
 
     </div>
     <!-- /.row -->
@@ -33,7 +24,7 @@
 
             <form role="form" method="POST" action="#">
                 <div class="row">
-                    <div class="form-group col-lg-4">
+                    <!--div class="form-group col-lg-4">
                         <label for="input1">Name</label>
                         <input type="text" name="contact_name" class="form-control" id="input1">
                     </div>
@@ -41,21 +32,41 @@
                         <label for="input2">Email Address</label>
                         <input type="email" name="contact_email" class="form-control" id="input2">
                     </div>
-                    <!--div class="form-group col-lg-4">
-                        <label for="input3">Phone Number</label>
-                        <input type="phone" name="contact_phone" class="form-control" id="input3">
-                    </div-->
                     <div class="clearfix"></div>
-                    <!--div class="form-group col-lg-12">
-                        <label for="input4">Message</label>
-                        <textarea name="contact_message" class="form-control" rows="6" id="input4"></textarea>
-                    </div-->
                     <div class="form-group col-lg-12">
                         <input type="hidden" name="save" value="contact">
                         <button type="submit" class="btn btn-primary">Submit</button>
-                    </div>
+                    </div-->
                 </div>
             </form>
+
+
+            <form name="gform"
+                  id="gform" enctype="text/plain"
+                  action="https://docs.google.com/forms/d/1JKaQVOGvWKzv7eTK6FRX_VcfBfEzxTo6SoxSUEiRLCk/formResponse?"
+                  target="hidden_iframe"
+                  onsubmit="submitted=true;">
+                <div class="row">
+                    <div class="form-group col-lg-4">
+                    <!-- Use floating label instead of placeholder -->
+                    <md-icon md-svg-src="resources/icons/ic_person_black_48px.svg" class="name"></md-icon>
+                    <input type="text" class="form-control" placeholder="Name" name="entry.1543062607" id="entry.1543062607">
+                    </div>
+
+                    <div class="form-group col-lg-4">
+                    <!-- Use floating placeholder instead of label -->
+                    <md-icon md-svg-src="resources/icons/ic_email_black_48px.svg" class="email"></md-icon>
+                    <input ng-model="user.email" class="form-control" type="email" placeholder="Email (required)" name="entry.1892370577" id="entry.1892370577" ng-regired="true">
+                    </div>
+                    <div class="form-group col-lg-12">
+                    <input type="submit" class="btn btn-primary" value="Submit" class="fsSubmitButton">
+                    </div>
+
+                </div>
+            </form>
+            <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
+
+
         </div>
 
         <div class="col-sm-4">
@@ -70,6 +81,7 @@
             <p><i class="fa fa-envelope-o"></i> <abbr title="Email"></abbr>: <a
                     href="mailto:feedback@startbootstrap.com">contact@calpolyrobotics.com</a></p>
         </div>
+
 
             <!--p><i class="fa fa-phone"></i> <abbr title="Phone">P</abbr>: (555) 984-3600</p-->
 
@@ -94,7 +106,23 @@
             <!--/ul-->
         <!--/div-->
 
+        <div class="col-lg-12">
+            <!-- Embedded Google Map using an iframe - to select your location find it on Google maps and paste the link as the iframe src. If you want to use the Google Maps API instead then have at it! -->
+            <iframe width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3256.140417915826!2d-120.66639848444082!3d35.30249228028445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80ecf1b493877849%3A0x9f9dd80f69dcf021!2sBonderson+Engineering+Center%2C+San+Luis+Obispo%2C+CA+93405!5e0!3m2!1sen!2sus!4v1506206007117"
+                    width="600" height="450" frameborder="0" style="border:0" allowfullscreen>
+
+            </iframe>
+
+        </div>
     </div>
     <!-- /.row -->
 
 </div><!-- /.container -->
+<script type="text/javascript">var submitted=false;</script>
+<script type="text/javascript">
+    $('#gform').on('submit', function(e) {
+        $('#gform *').fadeOut(2000);
+        $('#gform').prepend('Your submission has been processed...');
+    });
+</script>
